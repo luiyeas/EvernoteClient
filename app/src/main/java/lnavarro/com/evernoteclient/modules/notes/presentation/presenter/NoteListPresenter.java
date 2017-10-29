@@ -9,6 +9,7 @@ import java.util.List;
  */
 
 public interface NoteListPresenter {
+
     public interface View {
         void drawNotes(List<Note> notes);
         void showLoadingView();

@@ -69,8 +69,7 @@ public class EvernoteRepository {
             noteFilter.setOrder(NoteSortOrder.CREATED.getValue());
         }
 
-        noteFilter.setAscending(true);
-
+        noteFilter.setAscending(filter.getFilter() == FilterBy.Filter.TITLE);
         return noteFilter;
     }
 }

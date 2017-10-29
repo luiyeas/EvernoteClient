@@ -25,4 +25,20 @@ public class FilterBy {
     public void setFilter(Filter filter) {
         this.filter = filter;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof FilterBy)) return false;
+
+        FilterBy filterBy = (FilterBy) o;
+
+        return getFilter() == filterBy.getFilter();
+
+    }
+
+    @Override
+    public int hashCode() {
+        return getFilter().hashCode();
+    }
 }

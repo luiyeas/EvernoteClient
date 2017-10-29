@@ -6,8 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 import com.evernote.edam.type.Note;
 
@@ -35,6 +39,8 @@ public class NoteListActivity extends AppCompatActivity implements NoteListPrese
     Toolbar mToolbar;
     @BindView(R.id.loading_view)
     View mLoadingView;
+    @BindView(R.id.spinner)
+    Spinner mSpinnerFilter;
 
 
     private NoteListPresenterImpl mPresenter;
@@ -57,13 +63,23 @@ public class NoteListActivity extends AppCompatActivity implements NoteListPrese
         showLoadingView();
         mToolbar.setTitle(getString(R.string.notes_activity_title));
         setSupportActionBar(mToolbar);
-
         mLlManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 
         mAdapter = new NoteAdapter();
         mRecyclerView.setLayoutManager(mLlManager);
         mRecyclerView.setAdapter(mAdapter);
 
+        mSpinnerFilter.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                mPresenter.onFilterSelected(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 
     @Override

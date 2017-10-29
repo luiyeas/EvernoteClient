@@ -4,4 +4,10 @@
     <string name="an_evernote_client_example">An evernote client example</string>
     <string name="error_text">An error has ocurred</string>
     <string name="notes_activity_title">Notes</string>
+
+    <string-array name="order_by">
+        <item>Title</item>
+        <item>Created Date</item>
+    </string-array>
+
 </resources>

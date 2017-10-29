@@ -47,8 +47,11 @@ public class NoteListInteractorImpl extends AbstractInteractor implements NoteLi
         removeCallbacks();
     }
 
-    public void updateFilter(FilterBy.Filter filter){
-        mFilterBy.setFilter(filter);
+    public void updateFilter(FilterBy.Filter filter) {
+        if (!mFilterBy.equals(filter)) {
+            mFilterBy.setFilter(filter);
+            getNotes();
+        }
     }
 
     private void getNotes() {

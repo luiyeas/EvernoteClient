@@ -9,6 +9,7 @@ import java.util.List;
 import lnavarro.com.evernoteclient.common.presenter.AbstractPresenter;
 import lnavarro.com.evernoteclient.modules.notes.domain.interactors.NoteListInteractor;
 import lnavarro.com.evernoteclient.modules.notes.domain.interactors.implementation.NoteListInteractorImpl;
+import lnavarro.com.evernoteclient.modules.notes.domain.model.FilterBy;
 import lnavarro.com.evernoteclient.modules.notes.presentation.presenter.NoteListPresenter;
 
 /**
@@ -44,7 +45,10 @@ public class NoteListPresenterImpl extends AbstractPresenter implements NoteList
 
     @Override
     public void onNotesError() {
-        mView.hideLoadingView();
-        mView.showErrorView();
+
+    }
+
+    public void onFilterSelected(int position) {
+        mInteractor.updateFilter(position == 0 ? FilterBy.Filter.TITLE : FilterBy.Filter.DATE);
     }
 }
