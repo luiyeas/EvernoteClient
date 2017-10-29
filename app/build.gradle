@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "27.0.0"
+    buildToolsVersion "26.0.2"
     defaultConfig {
         applicationId "lnavarro.com.evernoteclient"
         minSdkVersion 16
@@ -24,7 +24,20 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    // Android support
+    compile 'com.android.support:design:26.0.2'
+    compile 'com.android.support:appcompat-v7:26.0.2'
+    compile 'com.android.support:cardview-v7:26.0.2'
+
+    // Evernote SDK
+    compile 'com.evernote:android-sdk:2.0.0-RC4'
+
+    // Bind
+    compile 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+
+
     testCompile 'junit:junit:4.12'
 }

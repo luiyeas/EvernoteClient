@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- SPLASH -->
+    <dimen name="logo_size">54sp</dimen>
+    <dimen name="logo_subtitle_size">20sp</dimen>
+
+    <!-- PADDINGS -->
+    <dimen name="mid_lnormal_padding">4dp</dimen>
+    <dimen name="mid_normal_padding">8dp</dimen>
+    <dimen name="normal_padding">16dp</dimen>
+
+    <!-- TEXT SIZES -->
+    <dimen name="default_text_size">16sp</dimen>
+    <dimen name="default_text_subtitle_size">14sp</dimen>
+    <dimen name="title_margin_top">120dp</dimen>
+
+</resources>

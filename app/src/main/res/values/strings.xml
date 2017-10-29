@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">EvernoteClient</string>
+    <string name="evernoteclient">Evernote</string>
+    <string name="an_evernote_client_example">An evernote client example</string>
+    <string name="error_text">An error has ocurred</string>
+    <string name="notes_activity_title">Notes</string>
 </resources>
